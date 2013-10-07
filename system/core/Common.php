@@ -323,9 +323,9 @@ if ( ! function_exists('show_error'))
 * @access	public
 * @return	void
 */
-if ( ! function_exists('show_404'))
+if ( ! function_exists('show_404')) //如果不存在show_404方法
 {
-	function show_404($page = '', $log_error = TRUE)
+	function show_404($page = '', $log_error = TRUE) 
 	{
 		$_error =& load_class('Exceptions', 'core');
 		$_error->show_404($page, $log_error);

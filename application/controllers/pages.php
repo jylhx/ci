@@ -8,16 +8,16 @@ class Pages extends CI_Controller{ //注意  类名开头要大写   该类文�
 								//控制器基类所在位置 ：system/core/Controller.php
 	 
 	/**
-	 * 访问的url：http://ci.me/index.php/pages/view
-	 * 其中 index.php为入口文件
-	 * 		pages为控制器名称
-	 * 		view为对应的方法名
+	 * 访问的url：http://ci.me/index.php/pages/view   pathinfo格式
+	 * 其中 index.php为			入口文件
+	 * 		pages为				控制器名称
+	 * 		view为对应的			方法名
 	 * 		
 	 * http://ci.me/index.php/pages/view/about  
 	 * 其中的about为传入到参数$page的值
 	 * @param unknown_type $page
 	 */
-	 function view($page='home'){  //默认参数
+	 function index($page='home'){  //默认参数
 		$data['title']=ucfirst($page); //注意，将要分配到模板中行的变量都放到data数组里面去，data数组的键名就是模板中的变量名
 		
 		//按顺序加载显示模板内容，注意有分配变量到模板的情况该如何处理

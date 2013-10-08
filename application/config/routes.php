@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "pages"; //配置默认的控制器  
 $route['404_override'] = '';
 
 

@@ -9,7 +9,7 @@
 		<td><?=$v['name']?></td>
 		<td><?=$v['age']?></td>
 	</tr>
-	<?php endforeach;?>
+	<?php endforeach;?>   
 </table>
 </body>
 </html>

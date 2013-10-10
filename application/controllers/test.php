@@ -50,4 +50,14 @@ class Test extends  CI_Controller{
 		echo $id.'-----'.$name.'<br>'; //输出  24-----JACK
 		
 	}
+	
+	/**
+	 * 		CI控制器基类的input属性，存放的是CI_Input类实例化出来的对象
+	 * 作用：
+	 */
+	function input(){
+		
+		var_dump($this->input); //  object(CI_Input
+	}
+	
 }

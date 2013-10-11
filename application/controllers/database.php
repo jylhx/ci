@@ -142,4 +142,17 @@ class Database extends CI_Controller{
 	
 	}
 	
+	/**
+	 * CI的AR操作，delete方法
+	 */
+	function del(){  //http://ci.me/index.php/database/del
+		$bool=$this->db->delete('brand',array('brand_id'=>14));  
+		if ($bool){
+			echo '删除成功<br>';
+			echo '受影响的行数:'.$this->db->affected_rows();
+			$this->select(); //前去查看插入结果
+		}else{
+			echo '删除失败';
+		}
+	}
 }

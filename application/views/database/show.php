@@ -5,6 +5,8 @@
 <title>CI的数据库操作</title>
 </head>
 <body>
+
+	<?=$this ->input->server('REMOTE_ADDR'); ?>  <!-- 在模板中直接使用超级对象$this -->
 	<table border='2px'>
 		<tr>
 			<td>brand_id</td><td>brand_name</td><td>brand_logo</td><td>brand_desc</td><td>site_url</td>

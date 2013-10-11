@@ -57,4 +57,40 @@ class Database extends CI_Controller{
 			
 		}
 	}
+	
+	/**
+	 * 执行插入操作
+	 */
+	function add(){
+		$this->load->database();
+		$sql="insert into ci_brand (brand_name,brand_desc) values ('自有品牌','自有品牌')"; //insert into ci_brand (brand_name,brand_desc)中的数据库字段名不用加引号
+		$bool=$this->db->query($sql); //返回 bool值
+		if ($bool){
+			echo $this->db->affected_rows().'<br>';  //受影响行数
+			echo $this->db->insert_id(); //返回最近一次插入操作所得到的自增id
+		}else{
+			die('fail');
+		}
+		
+	}
+	/**推荐
+	 * 不想每次都进行$this->load->database();，
+	 * 可以使用配置文件autoload.php的配置项$autoload['libraries']进行自动加载
+	 * 执行绑定预编译变量预处理方式
+	 */
+	function update(){
+		
+		$data['name']='预编译';
+		$data['desc']='预编译';  //注意要放到$data数组里面去
+		
+		$sql="insert into ci_brand (brand_name,brand_desc) values (?,?)"; //使用预编译绑定变量
+		$bool=$this->db->query($sql,$data); //传入data数组
+		if ($bool){
+			echo $this->db->affected_rows().'<br>';  //受影响行数
+			echo $this->db->insert_id(); //返回最近一次插入操作所得到的自增id
+		}else{
+			die('fail');
+		}
+		
+	}
 }

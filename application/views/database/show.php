@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>CI的数据库操作</title>
+<title>CI数据库操作</title>
 </head>
 <body>
 

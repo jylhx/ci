@@ -46,7 +46,7 @@
 */
 
 $active_group = 'default';
-$active_record = TRUE;
+$active_record = TRUE;  //开启AR模型
 
 $db['default']['hostname'] = 'localhost';   //数据库配置选项
 $db['default']['username'] = 'root';

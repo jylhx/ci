@@ -93,4 +93,53 @@ class Database extends CI_Controller{
 		}
 		
 	}
+	
+	/**
+	 * CI的AR操作，get方法（对应thinkphp的select方法）
+	 */
+	function select(){
+		
+		$res=$this->db->get('brand');  //get方法是AR操作里面的，传入的表名不用加表前缀
+		$data['brand']=$res->result_array();
+		$this->load->view('database/show',$data);
+		
+	}
+	
+	/**
+	 * CI的AR操作，insert方法
+	 */
+	function ar_add(){  //   url：http://ci.me/index.php/database/ar_add
+		
+		$data=array(
+				'brand_name'=>'add',
+				'brand_desc'=>'insert()'
+				);
+		$bool=$this->db->insert('brand',$data);  //insert方法是AR操作里面的，传入的表名不用加表前缀
+		if ($bool){
+			$this->select(); //前去查看插入结果
+		}else{
+			echo '插入失败';
+		}
+	
+	}
+	
+	
+	/**
+	 * CI的AR操作，update方法
+	 */
+	function mod(){  //   url：http://ci.me/index.php/database/ar_add
+	
+		$data=array(
+				'brand_name'=>'add',
+				'brand_desc'=>'insert()--》mod'
+		);
+		$bool=$this->db->update('brand',$data,array('brand_id'=>14));  //update方法传入3个参数，表名，修改的数组，条件
+		if ($bool){
+			$this->select(); //前去查看插入结果
+		}else{
+			echo '修改失败';
+		}
+	
+	}
+	
 }
